@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "30374655-ee6e-4821-bf5c-11bc4d3a7b18",
+		"name": "Restaurants API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "paginated restaurants",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/restaurants?page=1&limit=10&search=Kano",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"restaurants"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "search",
+							"value": "Kano"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get one restaurant",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/restaurants/851f799f-0852-439e-b9b2-df92c43e7672",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"restaurants",
+						"851f799f-0852-439e-b9b2-df92c43e7672"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create restaurant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"restaurant\": {\n        \"city\": \"CDMX\",\n        \"email\": \"Angel.Independencia@email.com\",\n        \"lat\": \"19.4269903\",\n        \"lng\": \"-99.1676463\",\n        \"name\": \"\\\"Restaurante Angel\\\"\",\n        \"phone\": \"534 814 204\",\n        \"rating\": \"1\",\n        \"site\": \"https://angelindependencia.com\",\n        \"state\": \"CDMX\",\n        \"street\": \"Reforma\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/restaurants",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"restaurants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update restaurant",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"restaurant\": {\n        \"rating\": \"1\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/restaurants/851f799f-0852-439e-b9b2-df92c43e7672",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"restaurants",
+						"851f799f-0852-439e-b9b2-df92c43e7672"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete restaurant",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/restaurants/851f799f-0852-439e-b9b2-df92c43e7672",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"restaurants",
+						"851f799f-0852-439e-b9b2-df92c43e7672"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get statistics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/restaurants/statistics?latitude=19.4400570537131&longitude=-99.1270470974249&radius=100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"restaurants",
+						"statistics"
+					],
+					"query": [
+						{
+							"key": "latitude",
+							"value": "19.4400570537131"
+						},
+						{
+							"key": "longitude",
+							"value": "-99.1270470974249"
+						},
+						{
+							"key": "radius",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
