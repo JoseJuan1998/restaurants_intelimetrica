@@ -1,0 +1,479 @@
+{
+  "swagger": "2.0",
+  "paths": {
+    "/restaurants/statistics": {
+      "get": {
+        "tags": [
+          "Restaurants"
+        ],
+        "summary": "",
+        "responses": {
+          "500": {
+            "description": "Internal server error"
+          },
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/RestaurantStatistics"
+            },
+            "description": "Statistics"
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "number",
+            "required": false,
+            "name": "latitude",
+            "in": "query",
+            "description": "Latitude"
+          },
+          {
+            "type": "number",
+            "required": false,
+            "name": "longitude",
+            "in": "query",
+            "description": "Longitude"
+          },
+          {
+            "type": "integer",
+            "required": false,
+            "name": "radius",
+            "in": "query",
+            "description": "Radius in meters"
+          }
+        ],
+        "operationId": "RestaurantsWeb.RestaurantsController.statistics",
+        "description": "Returns statistics about the nearest restaurants."
+      }
+    },
+    "/api/restaurants/{id}": {
+      "patch": {
+        "tags": [
+          "Restaurants"
+        ],
+        "summary": "",
+        "responses": {
+          "422": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            },
+            "description": "Unprocessable entity"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Restaurant"
+            },
+            "description": "Restaurant resource"
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "required": true,
+            "name": "id",
+            "in": "path",
+            "description": "Restaurant ID"
+          },
+          {
+            "schema": "Restaurant",
+            "required": false,
+            "name": "restaurant",
+            "in": "body",
+            "description": "Restaurant data"
+          }
+        ],
+        "operationId": "RestaurantsWeb.RestaurantsController.update",
+        "description": "Updates a restaurant by ID."
+      },
+      "get": {
+        "tags": [
+          "Restaurants"
+        ],
+        "summary": "",
+        "responses": {
+          "404": {
+            "description": "Not found"
+          },
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Restaurant"
+            },
+            "description": "Restaurant resource"
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "required": true,
+            "name": "id",
+            "in": "path",
+            "description": "Restaurant ID"
+          }
+        ],
+        "operationId": "RestaurantsWeb.RestaurantsController.get",
+        "description": "Returns a restaurant by ID."
+      },
+      "delete": {
+        "tags": [
+          "Restaurants"
+        ],
+        "summary": "",
+        "responses": {
+          "404": {
+            "description": "Not found"
+          },
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Restaurant"
+            },
+            "description": "Restaurant resource"
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "required": true,
+            "name": "id",
+            "in": "path",
+            "description": "Restaurant ID"
+          }
+        ],
+        "operationId": "RestaurantsWeb.RestaurantsController.delete",
+        "description": "Deletes a restaurant by ID."
+      }
+    },
+    "/api/restaurants": {
+      "post": {
+        "tags": [
+          "Restaurants"
+        ],
+        "summary": "",
+        "responses": {
+          "422": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            },
+            "description": "Unprocessable entity"
+          },
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Restaurant"
+            },
+            "description": "Restaurant resource"
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "schema": "Restaurant",
+            "required": false,
+            "name": "restaurant",
+            "in": "body",
+            "description": "Restaurant data"
+          }
+        ],
+        "operationId": "RestaurantsWeb.RestaurantsController.create",
+        "description": "Creates a new restaurant."
+      },
+      "get": {
+        "tags": [
+          "Restaurants"
+        ],
+        "summary": "",
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Restaurant"
+            },
+            "description": "Restaurants list"
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "required": false,
+            "name": "page",
+            "in": "query",
+            "description": "Page number"
+          },
+          {
+            "type": "integer",
+            "required": false,
+            "name": "limit",
+            "in": "query",
+            "description": "Page limit"
+          },
+          {
+            "type": "string",
+            "required": false,
+            "name": "search",
+            "in": "query",
+            "description": "String to search within the restaurant name, site or email"
+          },
+          {
+            "type": "number",
+            "required": false,
+            "name": "lat",
+            "in": "query",
+            "description": "Search restaurants by latitude"
+          },
+          {
+            "type": "number",
+            "required": false,
+            "name": "lng",
+            "in": "query",
+            "description": "Search restaurants by longitude"
+          }
+        ],
+        "operationId": "RestaurantsWeb.RestaurantsController.page",
+        "description": "Returns a list of restaurants."
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "Info"
+        ],
+        "summary": "",
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Info"
+            },
+            "description": "Information resource"
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "required": false,
+            "name": "c",
+            "in": "query",
+            "description": "Command"
+          }
+        ],
+        "operationId": "RestaurantsWeb.SystemController.info",
+        "description": "Returns application information in develop environment. In staging and production environments works just as a server health check.\n"
+      }
+    }
+  },
+  "definitions": {
+    "RestaurantStatistics": {
+      "type": "object",
+      "title": "RestaurantStatistics",
+      "properties": {
+        "std": {
+          "type": "number",
+          "example": 0.5,
+          "description": "Rating standard deviation"
+        },
+        "count": {
+          "type": "integer",
+          "example": 10,
+          "description": "Number of restaurants"
+        },
+        "avg": {
+          "type": "number",
+          "example": 4.5,
+          "description": "Average rating"
+        }
+      },
+      "description": "Restaurant statistics data."
+    },
+    "RestaurantPage": {
+      "type": "object",
+      "title": "RestaurantPage",
+      "properties": {
+        "total_pages": {
+          "type": "integer",
+          "example": 10,
+          "description": "Total number of pages"
+        },
+        "total_count": {
+          "type": "integer",
+          "example": 100,
+          "description": "Total number of restaurants"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Restaurant"
+          }
+        },
+        "page": {
+          "type": "integer",
+          "example": 1,
+          "description": "Page number"
+        },
+        "offset": {
+          "type": "integer",
+          "example": 0,
+          "description": "Page offset"
+        },
+        "limit": {
+          "type": "integer",
+          "example": 10,
+          "description": "Page limit"
+        },
+        "count": {
+          "type": "integer",
+          "example": 10,
+          "description": "Number of restaurants in this page"
+        }
+      },
+      "description": "Restaurant page data."
+    },
+    "Error": {
+      "type": "object",
+      "title": "Error",
+      "example": {
+        "errors": {
+          "rating": [
+            "invalid"
+          ]
+        }
+      },
+      "description": "Error data."
+    },
+    "Restaurant": {
+      "type": "object",
+      "title": "Restaurant",
+      "properties": {
+        "updated_at": {
+          "type": "string",
+          "example": "2024-05-17T20:22:56Z",
+          "description": "Update timestamp"
+        },
+        "street": {
+          "type": "string",
+          "example": "1234 Main St",
+          "description": "Restaurant street"
+        },
+        "state": {
+          "type": "string",
+          "example": "IL",
+          "description": "Restaurant state"
+        },
+        "site": {
+          "type": "string",
+          "example": "https://myrestaurant.com",
+          "description": "Restaurant site"
+        },
+        "phone": {
+          "type": "string",
+          "example": "+1 234 567 890",
+          "description": "Restaurant phone"
+        },
+        "name": {
+          "type": "string",
+          "example": "My Restaurant",
+          "description": "Restaurant name"
+        },
+        "lng": {
+          "type": "number",
+          "example": "-89.650148",
+          "description": "Restaurant longitude"
+        },
+        "lat": {
+          "type": "number",
+          "example": "39.781721",
+          "description": "Restaurant latitude"
+        },
+        "inserted_at": {
+          "type": "string",
+          "example": "2024-05-17T20:22:56Z",
+          "description": "Insertion timestamp"
+        },
+        "id": {
+          "type": "string",
+          "example": "123e4567-e89b-12d3-a456-426614174000",
+          "description": "Restaurant ID"
+        },
+        "email": {
+          "type": "string",
+          "example": "restaurant@mail.com",
+          "description": "Restaurant email"
+        },
+        "city": {
+          "type": "string",
+          "example": "Springfield",
+          "description": "Restaurant city"
+        }
+      },
+      "description": "Restaurant data."
+    },
+    "Info": {
+      "type": "object",
+      "title": "App info",
+      "properties": {
+        "connections": {
+          "type": "object",
+          "properties": {
+            "databases": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "repo": {
+                    "type": "string",
+                    "example": "Elixir.Restaurants.Repo",
+                    "description": "Ecto repository name"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "app": {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "string",
+              "example": "0.0.0",
+              "description": "Application version"
+            },
+            "service": {
+              "type": "string",
+              "example": "restaurants",
+              "description": "Application name"
+            },
+            "env": {
+              "type": "string",
+              "example": "dev",
+              "description": "Environment"
+            }
+          }
+        }
+      },
+      "description": "Application relative information."
+    }
+  },
+  "host": "localhost:4000",
+  "info": {
+    "title": "Restaurants",
+    "description": "Welcome to the API documentation for the Restaurants Project. This comprehensive guide provides detailed information on how to interact with this RESTful API endpoints.",
+    "version": "0.1.0"
+  }
+}

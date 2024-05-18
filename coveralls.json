@@ -1,0 +1,24 @@
+{
+  "treat_no_relevant_lines_as_covered": true,
+  "coverage_options": {
+    "output_dir": "priv/static/doc/cover/",
+    "minimum_coverage": 85
+  },
+  "terminal_options": {
+    "file_column_width": 60
+  },
+  "skip_files": [
+    "lib/restaurants/application.ex",
+    "lib/restaurants/mailer.ex",
+    "lib/restaurants/repo.ex",
+    "lib/restaurants/schema.ex",
+    "lib/restaurants/restaurant_filters.ex",
+    "lib/restaurants/behaviors.ex",
+    "lib/restaurants_web.ex",
+    "lib/restaurants_web/endpoint.ex",
+    "lib/restaurants_web/gettext.ex",
+    "lib/restaurants_web/router.ex",
+    "lib/restaurants_web/telemetry.ex",
+    "test"
+  ]
+}

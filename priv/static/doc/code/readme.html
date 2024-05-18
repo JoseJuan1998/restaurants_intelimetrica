@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.32.2">
+    <meta name="project" content="Restaurants v0.1.0">
+
+      <meta name="author" content="Juan Alcantara">
+
+
+    <title>Workspace — Restaurants v0.1.0</title>
+    <link rel="stylesheet" href="dist/html-elixir-CDEHVNM4.css" />
+
+
+    <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
+    <script src="dist/handlebars.templates-K7URE6B4.js"></script>
+    <script src="dist/sidebar_items-E4532291.js"></script>
+    <script src="docs_config.js"></script>
+    <script async src="dist/html-BHYOTRCH.js"></script>
+
+
+  </head>
+  <body data-type="extras" class="page-extra">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="body-wrapper">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+      <div>
+        <a href="Restaurants.html" class="sidebar-projectName" translate="no">
+Restaurants
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v0.1.0
+        </div>
+      </div>
+    </div>
+    <ul id="sidebar-listNav" class="sidebar-listNav" role="tablist">
+      <li>
+        <button id="extras-list-tab-button" role="tab" data-type="extras" aria-controls="extras-tab-panel" aria-selected="true" tabindex="0">
+GUIDES
+        </button>
+      </li>
+
+        <li>
+          <button id="modules-list-tab-button" role="tab" data-type="modules" aria-controls="modules-tab-panel" aria-selected="false" tabindex="-1">
+            Modules
+          </button>
+        </li>
+
+
+    </ul>
+  </div>
+
+  <div id="extras-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="extras-list-tab-button">
+    <ul id="extras-full-list" class="full-list"></ul>
+  </div>
+
+    <div id="modules-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="modules-list-tab-button" hidden>
+      <ul id="modules-full-list" class="full-list"></ul>
+    </div>
+
+
+</nav>
+
+<main class="content">
+  <output role="status" id="toast"></output>
+
+  <div id="content" class="content-inner">
+    <div class="top-search">
+      <div class="search-settings">
+        <form class="search-bar" action="search.html">
+          <label class="search-label">
+            <span class="sr-only">Search documentation of Restaurants</span>
+            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+          </label>
+          <button type="submit" class="search-button" aria-label="Submit Search">
+            <i class="ri-search-2-line ri-lg" aria-hidden="true" title="Submit search"></i>
+          </button>
+          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+            <i class="ri-close-line ri-lg" title="Cancel search"></i>
+          </button>
+        </form>
+        <div class="autocomplete">
+        </div>
+        <button class="icon-settings display-settings">
+          <i class="ri-settings-3-line"></i>
+          <span class="sr-only">Settings</span>
+        </button>
+      </div>
+    </div>
+
+<div id="top-content">
+  <h1>
+
+
+    <span>Restaurants Workspace</span>
+  </h1>
+
+<h2 id="system-setup-with-docker-recommended" class="section-heading">
+  <a href="#system-setup-with-docker-recommended" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">System setup with Docker (recommended)</span>
+</h2>
+<h4>1. Install Docker Desktop on your system</h4><p>(If it is already installed, skip this step).</p><ul><li>This can be done following the documentation in this link: <a href="https://docs.docker.com/engine/install/"><code class="inline">https://docs.docker.com/engine/install/</code></a>. If you install <em>Docker</em> on an Unix like system, you must also install <em>Docker Compose</em>.</li></ul><h2 id="start-development-server" class="section-heading">
+  <a href="#start-development-server" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Start development server</span>
+</h2>
+<p>For full console output, navigate to the Restaurants project directory and run:</p><pre><code class="makeup elixir" translate="no"><span class="n">docker</span><span class="o">-</span><span class="n">compose</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="o">--</span><span class="n">build</span></code></pre><p>To stop it, simply press <code class="inline">Ctrl+C</code>.</p><ul><li><h4>Elixir's Interactive Shell</h4><p>  Alternatively if an <em>Interactive Elixir Shell</em> is needed when starting the server, navigate to the project directory and run:</p><pre><code class="makeup elixir" translate="no"><span class="w">  </span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="o">--</span><span class="n">rm</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="mi">4000</span><span class="p">:</span><span class="mi">4000</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="o">.</span><span class="o">/</span><span class="n">run</span><span class="o">.</span><span class="n">sh</span><span class="w"> </span><span class="n">iex</span></code></pre><p>  To stop it, simply press <code class="inline">Ctrl+C</code>, <code class="inline">a</code> then <code class="inline">Enter</code>.</p></li><li><h4>Test coverage report</h4><p>  In order to visualize the test coverage report is required to generate it before the server starts, and then start the server. To do that navigate to the Restaurants project directory and run:</p><pre><code class="makeup elixir" translate="no"><span class="w">  </span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="o">--</span><span class="n">rm</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="mi">4000</span><span class="p">:</span><span class="mi">4000</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="o">.</span><span class="o">/</span><span class="n">run</span><span class="o">.</span><span class="n">sh</span><span class="w"> </span><span class="n">cover</span></code></pre><p>  To stop it, simply press <code class="inline">Ctrl+C</code>, <code class="inline">a</code> then <code class="inline">Enter</code>.</p></li></ul><h2 id="run-automated-tests" class="section-heading">
+  <a href="#run-automated-tests" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Run automated tests</span>
+</h2>
+<p>In order to run the automated tests, navigate to the Restaurants project directory and run:</p><pre><code class="makeup elixir" translate="no"><span class="n">docker</span><span class="o">-</span><span class="n">compose</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="o">--</span><span class="n">rm</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="n">mix</span><span class="w"> </span><span class="n">test</span></code></pre><p>It's possible to use all the <a href="https://hexdocs.pm/mix/Mix.Tasks.Test.html"><code class="inline">mix test</code></a> and <code class="inline">mix coveralls</code> command options, like but not limited to <code class="inline">--trace</code>, <code class="inline">--failed</code>, <code class="inline">--max_failures</code>, <code class="inline">--seed</code> or <code class="inline">--only</code>.</p><h2 id="reset-the-database" class="section-heading">
+  <a href="#reset-the-database" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Reset the database</span>
+</h2>
+<p>If is needed to reset the database (drop, create and run migrations &amp; seeds), navigate to the Restaurants project directory and run:</p><pre><code class="makeup elixir" translate="no"><span class="n">docker</span><span class="o">-</span><span class="n">compose</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="o">--</span><span class="n">rm</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="n">mix</span><span class="w"> </span><span class="n">ecto</span><span class="o">.</span><span class="n">reset</span></code></pre><h2 id="server-usage" class="section-heading">
+  <a href="#server-usage" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Server usage</span>
+</h2>
+<table><thead><tr><th style="text-align: right;">Server URL</th><th style="text-align: left;"><a href="http://localhost:4000/"><code class="inline">http://localhost:4000/</code></a></th></tr></thead><tbody><tr><td style="text-align: right;">Phoenix LiveDashboard</td><td style="text-align: left;"><a href="http://localhost:4000/dashboard"><code class="inline">http://localhost:4000/dashboard</code></a></td></tr><tr><td style="text-align: right;">API-REST documentation</td><td style="text-align: left;"><a href="http://localhost:4000/doc/api"><code class="inline">http://localhost:4000/doc/api</code></a></td></tr><tr><td style="text-align: right;">Code documentation</td><td style="text-align: left;"><a href="http://localhost:4000/doc/code"><code class="inline">http://localhost:4000/doc/code</code></a></td></tr><tr><td style="text-align: right;">Code documentation ePub file</td><td style="text-align: left;"><a href="http://localhost:4000/doc/code/Restaurants.epub"><code class="inline">http://localhost:4000/doc/code/Restaurants.epub</code></a></td></tr><tr><td style="text-align: right;">Test coverage report</td><td style="text-align: left;"><a href="http://localhost:4000/doc/coverage"><code class="inline">http://localhost:4000/doc/coverage</code></a></td></tr></tbody></table><h3 id="useful-docker-commands" class="section-heading">
+  <a href="#useful-docker-commands" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Useful Docker commands</span>
+</h3>
+<table><thead><tr><th style="text-align: left;">Definition</th><th style="text-align: left;">Command</th></tr></thead><tbody><tr><td style="text-align: left;">Stop all containers</td><td style="text-align: left;"><code class="inline">docker stop $(docker container ls -q)</code></td></tr><tr><td style="text-align: left;">Remove all unused containers, networks, images and volumes</td><td style="text-align: left;"><code class="inline">docker system prune -a --volumes</code></td></tr></tbody></table>
+</div>
+
+<div class="bottom-actions" id="bottom-actions">
+  <div class="bottom-actions-item">
+
+      <a href="api-reference.html" class="bottom-actions-button" rel="prev">
+        <span class="subheader">
+          ← Previous Page
+        </span>
+        <span class="title">
+API Reference
+        </span>
+      </a>
+
+  </div>
+  <div class="bottom-actions-item">
+
+  </div>
+</div>
+    <footer class="footer">
+      <p>
+
+        <span class="line">
+          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+            Search HexDocs
+          </button>
+
+            <a href="Restaurants.epub" title="ePub version">
+              Download ePub version
+            </a>
+
+        </span>
+      </p>
+
+      <p class="built-using">
+        Built using
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.32.2) for the
+
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+      </p>
+
+    </footer>
+  </div>
+</main>
+</div>
+
+
+  </body>
+</html>

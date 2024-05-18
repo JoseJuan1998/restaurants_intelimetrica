@@ -1,0 +1,32 @@
+version: "3.3"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: /bin/sh run.sh
+    environment:
+      PORT: 4000
+      HOST: localhost
+      SECRET_KEY_BASE: secret
+      DB_CONNECTION: postgresql://postgres:postgres@database:5432/
+    ports: 
+      - "4000:4000"
+    depends_on: 
+      - database
+    links:
+      - database
+    volumes:
+      - ./lib:/app/lib
+      - ./.iex.exs:/app/.iex.exs
+      - ./test:/app/test
+      - ./priv/repo:/app/priv/repo
+
+  database:
+    image: postgis/postgis:latest
+    restart: always
+    environment: 
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    ports: 
+      - "5440:5432"
